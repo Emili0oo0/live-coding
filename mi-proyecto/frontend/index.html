@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mini Tienda Final</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container my-5">
+  <h1 class="text-center mb-4">Mini Tienda Final</h1>
+
+  <!-- Logout -->
+  <div class="text-end mb-3">
+    <button class="btn btn-danger d-none" id="btnLogout" onclick="logout()"><i class="bi bi-box-arrow-right"></i> Logout</button>
+  </div>
+
+  <!-- Registro / Login -->
+  <div id="seccionLoginRegistro">
+    <div class="row mb-4">
+      <div class="col-md-6 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Registro</h2>
+            <input id="rEmail" class="form-control mb-2" placeholder="Email">
+            <input id="rPass" type="password" class="form-control mb-2" placeholder="Password">
+            <input id="rPass2" type="password" class="form-control mb-2" placeholder="Confirmar Password">
+            <button class="btn btn-success w-100" onclick="register()"><i class="bi bi-person-plus"></i> Registrar</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title">Login</h2>
+            <input id="lEmail" class="form-control mb-2" placeholder="Email">
+            <input id="lPass" type="password" class="form-control mb-2" placeholder="Password">
+            <button class="btn btn-primary w-100" onclick="login()"><i class="bi bi-box-arrow-in-right"></i> Login</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Crear Producto -->
+  <div class="card mb-4 d-none" id="seccionCrearProducto">
+    <div class="card-body">
+      <h2 class="card-title">Crear Producto</h2>
+      <div class="row g-2">
+        <div class="col-md-4"><input id="nombre" class="form-control" placeholder="Nombre"></div>
+        <div class="col-md-4"><input id="desc" class="form-control" placeholder="Descripción"></div>
+        <div class="col-md-2"><input id="precio" type="number" class="form-control" placeholder="Precio"></div>
+        <div class="col-md-2"><button class="btn btn-warning w-100" onclick="crear()"><i class="bi bi-plus-circle"></i> Crear</button></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mis Productos -->
+  <div class="card mb-4 d-none" id="seccionMisProductos">
+    <div class="card-body">
+      <h2 class="card-title">Mis Productos</h2>
+      <button class="btn btn-info mb-2" onclick="cargarMisProductos()"><i class="bi bi-box-seam"></i> Cargar Mis Productos</button>
+      <ul id="misProductos" class="list-group"></ul>
+    </div>
+  </div>
+
+  <!-- Catálogo -->
+  <div class="card mb-4 d-none" id="seccionCatalogo">
+    <div class="card-body">
+      <h2 class="card-title">Catálogo</h2>
+      <button class="btn btn-secondary mb-2" onclick="cargarCatalogo()"><i class="bi bi-card-list"></i> Cargar Catálogo</button>
+      <div id="catalogo" class="row g-3"></div>
+    </div>
+  </div>
+
+  <!-- Carrito -->
+  <div class="card mb-4 d-none" id="seccionCarrito">
+    <div class="card-body">
+      <h2 class="card-title">Carrito</h2>
+      <ul id="carrito" class="list-group mb-2"></ul>
+      <div class="d-flex justify-content-between align-items-center">
+        <span id="totalCarrito">Total: 0 €</span>
+        <button class="btn btn-success" onclick="finalizarCompra()"><i class="bi bi-cash-stack"></i> Finalizar Compra</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
